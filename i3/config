@@ -56,7 +56,10 @@ bindsym $mod+F1 exec pavucontrol
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+Shift+d exec dmenu_run
+
+# start rofi (program launcher)
+bindsym $mod+d exec --no-startup-id rofi -combi-modi window#drun#ssh -show combi -icon-theme "Yaru" -show-icons
 
 # startup scripts
 exec --no-startup-id nitrogen --restore
@@ -232,3 +235,5 @@ bindsym $mod+r mode "resize"
 #bar {
 #        status_command i3status
 #}
+
+

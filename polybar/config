@@ -29,9 +29,13 @@ content-background = ${colors.background}
 
 [module/date]
 type = internal/date
-date = %Y-%m-%d%
+interval = 5
+date = %d-%m-%Y
+time = %l:%M%p
 format-background = ${colors.background}
 format-foreground = ${colors.foreground}
+label = %date% %time%
+
 
 [module/wireless-network]
 type = internal/network
