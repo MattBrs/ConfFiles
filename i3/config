@@ -62,9 +62,12 @@ bindsym $mod+Shift+d exec dmenu_run
 bindsym $mod+d exec --no-startup-id rofi -combi-modi window#drun#ssh -show combi -icon-theme "Yaru" -show-icons
 
 # startup scripts
-exec --no-startup-id nitrogen --restore
+
+exec --no-startup-id feh --bg-scale /home/matteo/Documents/Wallpapers/samuraiWp.jpg
 exec --no-startup-id pcmanfm -d
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
+
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -182,6 +185,9 @@ bindsym $mod+5 workspace number $ws5
 bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
+
+#Screenshot
+bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
 
 # move focused container to workspace
