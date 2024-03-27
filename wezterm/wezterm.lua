@@ -2,13 +2,17 @@ local term = require("wezterm")
 local act = term.action
 local config = {}
 
-config.color_scheme = 'Monokai Dimmed'
+config.color_scheme = 'Monokai Pro'
 config.window_background_opacity = 0.84
 config.window_frame = {
     font_size = 13.0
 }
 
-config.font_size = 12.0
+
+config.font =
+    term.font('CaskaydiaCove Nerd Font', { weight = 'Regular', style = 'Italic' })
+
+config.font_size = 15.0
 
 config.keys = {
     -- This will create a new split and run your default program inside it
@@ -22,5 +26,6 @@ config.keys = {
     -- Make Option-Right equivalent to Alt-f; forward-word
     { key = "RightArrow", mods = "OPT", action = term.action { SendString = "\x1bf" } },
 }
+
 
 return config
